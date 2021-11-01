@@ -20,8 +20,8 @@ namespace Alura.CoisasAFazer.WebApp.Controllers
             }
 
             var comando = new CadastraTarefa(model.Titulo, categoria, model.Prazo);
-            var handler = new CadastraTarefaHandler();
-            handler.Execute(comando);
+            //var handler = new CadastraTarefaHandler();
+            //handler.Execute(comando);
             return Ok();
         }
     }
