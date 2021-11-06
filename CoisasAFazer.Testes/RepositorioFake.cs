@@ -10,6 +10,11 @@ namespace CoisasAFazer.Testes
     public class RepositorioFake : IRepositorioTarefas
     {
         List<Tarefa> lista = new List<Tarefa>();
+        public void IncluirTarefas(params Tarefa[] tarefas)
+        {
+            throw new Exception("Houve um erro ao incluir as tarefas.");
+            tarefas.ToList().ForEach(t => lista.Add(t));
+        }
         public void AtualizarTarefas(params Tarefa[] tarefas)
         {
             throw new NotImplementedException();
@@ -20,10 +25,6 @@ namespace CoisasAFazer.Testes
             throw new NotImplementedException();
         }
 
-        public void IncluirTarefas(params Tarefa[] tarefas)
-        {
-            tarefas.ToList().ForEach(t => lista.Add(t));
-        }
 
         public Categoria ObtemCategoriaPorId(int id)
         {
